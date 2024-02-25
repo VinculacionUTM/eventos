@@ -7,11 +7,11 @@ config()
 
 const app = express();
 const port = process.env.PORT || 3000;
-const allowedOrigin = 'https://eventosutmach.000webhostapp.com';
+const allowedOrigin = process.env.ACCESS_CONTROL_ALLOW_ORIGIN || '*'; // Usamos la variable de entorno aquí
+
 app.use(cors({ origin: allowedOrigin }));
 
 app.use(express.json());
-
 
 const pool = new pg.Pool({
     connectionString: process.env.DATABASE_URL,
@@ -28,4 +28,8 @@ app.get('/listaParticipantes', async(req, res) => {
         console.error(error);
         return res.status(500).json({ error: 'Error en el servidor' });
     }
+});
+
+app.listen(port, () => {
+    console.log(`Servidor corriendo en el puerto ${port}`);
 });
