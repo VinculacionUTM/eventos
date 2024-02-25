@@ -16,7 +16,7 @@ app.use(express.json());
 const pool = new pg.Pool({
     connectionString: process.env.DATABASE_URL,
     ssl: true
-})
+});
 
 app.get('/listaParticipantes', async(req, res) => {
     try {
