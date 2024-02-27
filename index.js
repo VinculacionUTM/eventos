@@ -7,7 +7,7 @@ config()
 
 const app = express();
 const port = process.env.PORT || 3000;
-const allowedOrigin = process.env.ACCESS_CONTROL_ALLOW_ORIGIN || '*'; // Usamos la variable de entorno aquí
+const allowedOrigin = 'https://shyest-economies.000webhostapp.com'; // Usamos la variable de entorno aquí
 
 app.use(cors({ origin: allowedOrigin }));
 
