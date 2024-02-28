@@ -175,7 +175,7 @@ app.get('/buscar/:cedula', async(req, res) => {
 });
 
 // Obtener la lista de participantes
-app.get('/listaParticipantes', async(req, res) => {
+app.get('/lista', async(req, res) => {
     try {
         const getParticipantsQuery = 'SELECT * FROM asistencias_dias';
         const participants = await pool.query(getParticipantsQuery);
