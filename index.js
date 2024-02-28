@@ -93,7 +93,7 @@ app.get('/buscarPorCedula/:cedula', async(req, res) => {
 });
 
 //btener la lista de participantes
-app.get('/listaParticipantes', async(req, res) => {
+app.get('/listaParticipantesPrueba', async(req, res) => {
     try {
         const getParticipantsQuery = 'SELECT * FROM Prueba';
         const participants = await pool.query(getParticipantsQuery);
